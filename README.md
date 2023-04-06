@@ -17,10 +17,10 @@
 3. Change the port inside of `server.go` file if needed, by default it runs on ```8080```
 4. Run `go run server.go` in the terminal to launch the server
 
-##To use the GraphQL UI to see all of the documentations for each query, head to `http://localhost:8080/` to see the UI. However, to interact with the API, you'll need to use `http://localhost:8080/query`  
+## To use the GraphQL UI to see all of the documentations for each query, head to `http://localhost:8080/` to see the UI. However, to interact with the API, you'll need to use `http://localhost:8080/query`  
 *Note: Keep in mind you'll need to provide authorization when using this approach to send requests.  
 
-##To use the REST API, you can use the following URLs to query the API by navigating to /api/
+## To use the REST API, you can use the following URLs to query the API by navigating to /api/
 - GET /user: Returns a User by username.
 - GET /countries/{id}: Returns a Country by ID.
 - GET /countries: Returns a list of countries.
@@ -62,7 +62,7 @@
 }  
 ```
 
-*Addition/Updating monitored countries:
+* Addition/Updating monitored countries:
 ```
 {
   "countryId": 1
@@ -78,7 +78,7 @@
 }
 ```
 
-*Logging in:
+* Logging in:
 ```
 {
  "username": "examplename",
