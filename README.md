@@ -43,11 +43,46 @@
 - PUT /users/{userId}: Updates a user by ID.
 - POST /refresh-covid-data: Refreshes COVID data for all countries.
 
- * Addition of a new country looks like this:
+ * Addition/Updating a new country body looks like this:
  ```
 {
   "name": "Canada",
   "code": "CA"
+}
+```
+* Addition/Updating a single covid stat looks like this:
+```
+{
+    "id": 1,
+    "country_id": 1,
+    "date": "2022-03-29T00:00:00Z",
+    "confirmed_cases": 5000,
+    "deaths": 200,
+    "recovered": 3000
+}  
+```
+
+*Addition/Updating monitored countries:
+```
+{
+  "countryId": 1
+}
+```
+* Registering a new user:
+
+```
+{
+  "username": "examplename",
+  "email": "examplename@example.com",
+  "password": "Password1234!"
+}
+```
+
+*Logging in:
+```
+{
+ "username": "examplename",
+ "password": "Password1234!"
 }
 ```
 
