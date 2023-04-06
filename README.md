@@ -21,27 +21,27 @@
 *Note: Keep in mind you'll need to provide authorization when using this approach to send requests.
 
 ##To use the REST API, you can use the following URLs to query the API by navigating to /api/
-//! GET /user: Returns a User by username.
-//! GET /countries/{id}: Returns a Country by ID.
-//! GET /countries: Returns a list of countries.
-//! POST /countries: Creates a new Country.
-//! PUT /countries/{id}: Updates an existing Country by ID.
-//! DELETE /countries/{id}: Deletes an existing Country by ID.
-//! GET /covid-stats/{id}: Returns a CovidStatistic by ID.
-//! GET /covid-stats: Returns a list of CovidStatistics.
-//! POST /covid-stats: Creates a new CovidStatistic.
-//! PUT /covid-stats/{id}: Updates an existing CovidStatistic by ID.
-//! DELETE /covid-stats/{id}: Deletes an existing CovidStatistic by ID.
-//! GET /users/{userid}/monitored-countries: Returns a list of monitored countries for a User by ID.
-//! POST /users/{userid}/monitored-countries: Adds a new monitored country for a User by ID.
-//! DELETE /users/{userid}/monitored-countries/{countryId}: Removes a monitored country for a User by ID and Country ID.
-//! GET /countries/top-by-case-type/{caseType}/{limit}/{userId}: Returns a list of top countries by case type for a User by ID.
-//! GET /countries/{countryId}/death-percentage: Returns the death percentage for a Country by ID.
-//! POST /register: Registers a new user.
-//! POST /login: Logs in a user.
-// DELETE /users/{userId}: Deletes a user by ID.
-// PUT /users/{userId}: Updates a user by ID.
-// POST /refresh-covid-data: Refreshes COVID data for all countries.
+- GET /user: Returns a User by username.
+- GET /countries/{id}: Returns a Country by ID.
+- GET /countries: Returns a list of countries.
+- POST /countries: Creates a new Country.
+- PUT /countries/{id}: Updates an existing Country by ID.
+- DELETE /countries/{id}: Deletes an existing Country by ID.
+- GET /covid-stats/{id}: Returns a CovidStatistic by ID.
+- GET /covid-stats: Returns a list of CovidStatistics.
+- POST /covid-stats: Creates a new CovidStatistic.
+- PUT /covid-stats/{id}: Updates an existing CovidStatistic by ID.
+- DELETE /covid-stats/{id}: Deletes an existing CovidStatistic by ID.
+- GET /users/{userid}/monitored-countries: Returns a list of monitored countries for a User by ID.
+- POST /users/{userid}/monitored-countries: Adds a new monitored country for a User by ID.
+- DELETE /users/{userid}/monitored-countries/{countryId}: Removes a monitored country for a User by ID and Country ID.
+- GET /countries/top-by-case-type/{caseType}/{limit}/{userId}: Returns a list of top countries by case type for a User by ID.
+- GET /countries/{countryId}/death-percentage: Returns the death percentage for a Country by ID.
+- POST /register: Registers a new user.
+- POST /login: Logs in a user.
+- DELETE /users/{userId}: Deletes a user by ID.
+- PUT /users/{userId}: Updates a user by ID.
+- POST /refresh-covid-data: Refreshes COVID data for all countries.
 
  * Addition of a new country looks like this:
  ```
