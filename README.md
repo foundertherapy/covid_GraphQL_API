@@ -46,8 +46,8 @@
  * Addition/Updating a new country body looks like this:
  ```
 {
-  "name": "Canada",
-  "code": "CA"
+    "name": "Canada",
+    "code": "CA"
 }
 ```
 * Addition/Updating a single covid stat looks like this:
@@ -65,24 +65,24 @@
 * Addition/Updating monitored countries:
 ```
 {
-  "countryId": 1
+    "countryId": 1
 }
 ```
 * Registering a new user:
 
 ```
 {
-  "username": "examplename",
-  "email": "examplename@example.com",
-  "password": "Password1234!"
+    "username": "examplename",
+    "email": "examplename@example.com",
+    "password": "Password1234!"
 }
 ```
 
 * Logging in:
 ```
 {
- "username": "examplename",
- "password": "Password1234!"
+   "username": "examplename",
+   "password": "Password1234!"
 }
 ```
 
