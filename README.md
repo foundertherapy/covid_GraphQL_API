@@ -12,10 +12,10 @@
 * Subscription to certain countries and getting updates on stats for them daily
 
 ### To run the server, you'll need to do the following:
-1- Clone the repo
-2- Run `go mod tidy` to get all of the reuquired packages from "go.mod".
-3- Change the port inside of `server.go` file if needed, by default it runs on ```8080```
-3- Run `go run server.go` in the terminal to launch the server
+1. Clone the repo
+2. Run `go mod tidy` to get all of the reuquired packages from "go.mod".
+3. Change the port inside of `server.go` file if needed, by default it runs on ```8080```
+4. Run `go run server.go` in the terminal to launch the server
 
 ##To use the GraphQL UI to see all of the documentations for each query, head to `http://localhost:8080/` to see the UI. However, to interact with the API, you'll need to use `http://localhost:8080/query`
 *Note: Keep in mind you'll need to provide authorization when using this approach to send requests.
