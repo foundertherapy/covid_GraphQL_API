@@ -68,7 +68,7 @@ func main() {
 	router.Handle("/login", srv)
 
 	router.Group(func(r chi.Router) {
-		// r.Use(authenticationMiddleware)
+		r.Use(authenticationMiddleware)
 		r.Handle("/query", srv)
 		r.HandleFunc("/api/user", api.UserHandler(db))
 		r.HandleFunc("/api/countries", api.CountriesHandler(db))
