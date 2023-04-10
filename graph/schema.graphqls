@@ -1,0 +1,130 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type LoginResponse {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  password: String!
+  monitoredCountries: [Country!]!
+}
+
+type Country {
+  id: ID!
+  name: String!
+  code: String!
+  covidStats(after: String, first: Int): CovidStatisticConnection
+}
+
+type CovidStatisticConnection {
+  pageInfo: PageInfo!
+  edges: [CovidStatisticEdge!]!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+}
+
+type CovidStatisticEdge {
+  cursor: String!
+  node: CovidStatistic!
+}
+
+type CovidStatistic {
+  id: ID!
+  country: Country!
+  date: String!
+  confirmed: Int!
+  recovered: Int!
+  deaths: Int!
+}
+
+input CovidStatisticInput {
+  countryID: ID!
+  date: String!
+  confirmed: Int!
+  recovered: Int!
+  deaths: Int!
+}
+
+input CountryInput {
+  name: String!
+  code: String!
+}
+
+input CountryFilterInput {
+  nameContains: String
+  codeEquals: String
+}
+
+type CountriesConnection {
+  pageInfo: PageInfo!
+  edges: [CountryEdge!]!
+}
+
+type CountryEdge {
+  cursor: String!
+  node: Country!
+}
+
+type Query {
+  login(username: String!, password: String!): LoginResponse!
+  user(username: String, email: String): User
+  country(id: ID!): Country
+  countries(
+    first: Int
+    after: String
+    filter: CountryFilterInput
+  ): CountriesConnection!
+  monitoredCountries(userID: ID!): [Country!]!
+  covidStatistics(
+    countryID: ID!
+    after: String
+    first: Int
+  ): CovidStatisticConnection!
+  covidStatistic(id: ID!): CovidStatistic
+  deathPercentage(countryID: ID!): Float!
+  topCountriesByCaseTypeForUser(
+    caseType: CaseType!
+    limit: Int!
+    userId: ID!
+  ): [Country]!
+}
+
+type Mutation {
+  register(username: String!, email: String!, password: String!): LoginResponse!
+  deleteUser(userID: ID!): Boolean!
+  addCountry(input: CountryInput!): Country!
+  updateCountry(id: ID!, name: String!, code: String!): Country!
+  deleteCountry(countryID: ID!): Boolean!
+  addCovidStatistic(input: CovidStatisticInput!): CovidStatistic!
+  deleteCovidStatistic(id: ID!): Boolean!
+  updateCovidStatistic(
+    id: ID!
+    date: String!
+    confirmed: Int!
+    recovered: Int!
+    deaths: Int!
+  ): CovidStatistic!
+  addUserMonitoredCountry(userID: ID!, countryID: ID!): User!
+  removeUserMonitoredCountry(userID: ID!, countryID: ID!): User!
+  refreshCovidDataForAllCountries: Boolean!
+}
+
+type Subscription {
+  covidStatisticUpdated(countryIDs: [ID!]!): [CovidStatistic!]!
+}
+
+enum CaseType {
+  CONFIRMED
+  DEATHS
+}
